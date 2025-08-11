@@ -1,3 +1,4 @@
+import { QuotationForm } from "./QuotationForm";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Phone, MessageCircle, MapPin, Mail, Clock, Building } from "lucide-react";
@@ -159,6 +160,9 @@ export function ContactSection() {
           </div>
         </div>
       </div>
+      
+      {/* Quotation Form */}
+      <QuotationForm />
     </section>
   );
 }

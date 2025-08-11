@@ -97,7 +97,7 @@ export function PropertiesSection() {
           ))}
         </div>
 
-        <div className="text-center mt-16">
+        <div className="text-center">
           <p className="text-muted-foreground mb-6">
             Don't see what you're looking for? We have more exclusive properties available.
           </p>
@@ -113,7 +113,7 @@ export function PropertiesSection() {
                 const message = "Hi, I would like to see more properties from Mahalaxmi Developers.";
                 window.open(`https://wa.me/919876543210?text=${encodeURIComponent(message)}`, "_blank");
               }}
-              className="border-2 border-premium text-premium px-8 py-3 rounded-lg font-semibold hover:bg-premium hover:text-premium-foreground transition-all duration-300"
+              className="border-2 border-green-500 text-green-600 px-8 py-3 rounded-lg font-semibold hover:bg-green-500 hover:text-white transition-all duration-300"
             >
               WhatsApp for Details
             </button>

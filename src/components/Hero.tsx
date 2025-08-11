@@ -1,5 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Phone, MessageCircle, Award, Users, Building } from "lucide-react";
+import { CounterAnimation } from "./CounterAnimation";
+import { CountdownTimer } from "./CountdownTimer";
 
 export function Hero() {
   const handleCall = () => {
@@ -31,6 +33,9 @@ export function Hero() {
             </p>
           </div>
 
+          {/* Timer */}
+          <CountdownTimer />
+
           {/* Tagline */}
           <div className="bg-luxury-foreground/10 backdrop-blur-sm rounded-2xl p-6 border border-luxury-foreground/20">
             <p className="text-lg md:text-xl text-luxury-foreground font-medium">
@@ -47,21 +52,27 @@ export function Hero() {
               <div className="flex justify-center">
                 <Award className="w-8 h-8 text-premium" />
               </div>
-              <div className="text-2xl font-bold text-luxury-foreground">15+</div>
+              <div className="text-2xl font-bold text-luxury-foreground">
+                <CounterAnimation end={15} suffix="+" />
+              </div>
               <div className="text-luxury-foreground/70">Years Experience</div>
             </div>
             <div className="text-center space-y-2">
               <div className="flex justify-center">
                 <Building className="w-8 h-8 text-premium" />
               </div>
-              <div className="text-2xl font-bold text-luxury-foreground">50+</div>
+              <div className="text-2xl font-bold text-luxury-foreground">
+                <CounterAnimation end={50} suffix="+" />
+              </div>
               <div className="text-luxury-foreground/70">Projects Completed</div>
             </div>
             <div className="text-center space-y-2">
               <div className="flex justify-center">
                 <Users className="w-8 h-8 text-premium" />
               </div>
-              <div className="text-2xl font-bold text-luxury-foreground">2000+</div>
+              <div className="text-2xl font-bold text-luxury-foreground">
+                <CounterAnimation end={2000} suffix="+" />
+              </div>
               <div className="text-luxury-foreground/70">Happy Families</div>
             </div>
           </div>
@@ -80,7 +91,7 @@ export function Hero() {
               onClick={handleWhatsApp}
               size="lg"
               variant="outline"
-              className="border-luxury-foreground/30 text-luxury-foreground hover:bg-luxury-foreground hover:text-luxury transition-all duration-300 font-semibold backdrop-blur-sm"
+              className="border-green-500 text-green-600 hover:bg-green-500 hover:text-white transition-all duration-300 font-semibold backdrop-blur-sm"
             >
               <MessageCircle className="w-5 h-5 mr-2" />
               WhatsApp

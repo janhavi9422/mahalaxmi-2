@@ -1,7 +1,8 @@
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { MapPin, Bed, Bath, Square, Phone, MessageCircle } from "lucide-react";
+import { MapPin, Bed, Bath, Square, Phone, MessageCircle, Eye } from "lucide-react";
 
 interface PropertyCardProps {
   id: number;
@@ -17,6 +18,7 @@ interface PropertyCardProps {
 }
 
 export function PropertyCard({
+  id,
   title,
   location,
   price,
@@ -27,8 +29,14 @@ export function PropertyCard({
   type,
   features,
 }: PropertyCardProps) {
+  const navigate = useNavigate();
+  
   const handleCall = () => {
     window.open("tel:+919876543210", "_self");
+  };
+
+  const handleViewDetails = () => {
+    navigate(`/property/${id}`);
   };
 
   const handleWhatsApp = () => {
@@ -102,21 +110,30 @@ export function PropertyCard({
 
         <div className="flex gap-2 pt-4">
           <Button
+            onClick={handleViewDetails}
+            variant="outline"
+            className="flex-1 border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 font-medium"
+          >
+            <Eye className="w-4 h-4 mr-2" />
+            View Details
+          </Button>
+          <Button
             onClick={handleCall}
             className="flex-1 bg-gradient-hero text-luxury-foreground hover:shadow-premium transition-all duration-300 font-medium"
           >
             <Phone className="w-4 h-4 mr-2" />
-            Call Now
-          </Button>
-          <Button
-            onClick={handleWhatsApp}
-            variant="outline"
-            className="flex-1 border-premium text-premium hover:bg-premium hover:text-premium-foreground transition-all duration-300 font-medium"
-          >
-            <MessageCircle className="w-4 h-4 mr-2" />
-            WhatsApp
+            Call
           </Button>
         </div>
+        
+        <Button
+          onClick={handleWhatsApp}
+          variant="outline"
+          className="w-full mt-2 border-green-500 text-green-600 hover:bg-green-500 hover:text-white transition-all duration-300 font-medium"
+        >
+          <MessageCircle className="w-4 h-4 mr-2" />
+          WhatsApp for Details
+        </Button>
       </CardContent>
     </Card>
   );
