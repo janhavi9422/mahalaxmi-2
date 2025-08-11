@@ -7,7 +7,7 @@ All colors MUST be HSL.
 */
 
 @layer base {
-  :root {
+:root {
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
 
@@ -17,8 +17,8 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 210 100% 20%;
+    --primary-foreground: 0 0% 98%;
 
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
@@ -26,8 +26,22 @@ All colors MUST be HSL.
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 210 40% 96.1%;
+    --accent: 45 100% 51%;
     --accent-foreground: 222.2 47.4% 11.2%;
+
+    --luxury: 210 100% 15%;
+    --luxury-foreground: 0 0% 98%;
+    
+    --premium: 45 100% 51%;
+    --premium-foreground: 222.2 47.4% 11.2%;
+
+    --gradient-hero: linear-gradient(135deg, hsl(210 100% 20%), hsl(210 100% 15%));
+    --gradient-luxury: linear-gradient(135deg, hsl(45 100% 51%), hsl(45 100% 45%));
+    --gradient-card: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.98));
+
+    --shadow-luxury: 0 20px 50px -12px hsl(210 100% 20% / 0.25);
+    --shadow-card: 0 10px 30px -10px hsl(210 100% 20% / 0.1);
+    --shadow-premium: 0 0 40px hsl(45 100% 51% / 0.3);
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
@@ -55,7 +69,7 @@ All colors MUST be HSL.
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
-  .dark {
+.dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
 
@@ -76,6 +90,12 @@ All colors MUST be HSL.
 
     --accent: 217.2 32.6% 17.5%;
     --accent-foreground: 210 40% 98%;
+
+    --luxury: 210 40% 98%;
+    --luxury-foreground: 222.2 47.4% 11.2%;
+    
+    --premium: 45 100% 51%;
+    --premium-foreground: 222.2 47.4% 11.2%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
