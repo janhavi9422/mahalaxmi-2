@@ -1,8 +1,11 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Phone, MessageCircle, Menu } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
+
 export function Navbar() {
+  const [open, setOpen] = useState(false);
   const handleCall = () => {
     window.open("tel:+919876543210", "_self");
   };
@@ -13,12 +16,12 @@ export function Navbar() {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 border-b bg-background/70 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="fixed top-0 left-0 right-0 z-50 border-b bg-background shadow-sm">
       <nav className="container mx-auto px-6 h-16 flex items-center justify-between">
         {/* Brand */}
         <a href="/" className="flex items-center gap-2" aria-label="Mahalaxmi Developers Home">
-          <span className="font-heading text-xl font-bold text-primary">Mahalaxmi</span>
-          <span className="font-heading text-xl font-bold text-premium">Developers</span>
+          <span className="font-heading text-xl font-bold text-foreground">Mahalaxmi</span>
+          <span className="font-heading text-xl font-bold text-foreground">Developers</span>
         </a>
 
         {/* Desktop links */}
@@ -39,7 +42,7 @@ export function Navbar() {
 
         {/* Mobile menu */}
         <div className="md:hidden">
-          <Sheet>
+          <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon" aria-label="Open menu">
                 <Menu className="w-5 h-5" />
@@ -47,13 +50,13 @@ export function Navbar() {
             </SheetTrigger>
             <SheetContent side="right" className="w-72">
               <div className="mt-8 flex flex-col gap-4">
-                <a href="#properties" className="text-foreground/90 hover:text-foreground" aria-label="Go to properties">Properties</a>
-                <a href="#contact" className="text-foreground/90 hover:text-foreground" aria-label="Go to contact">Contact</a>
+                <a href="#properties" onClick={() => setOpen(false)} className="text-foreground/90 hover:text-foreground" aria-label="Go to properties">Properties</a>
+                <a href="#contact" onClick={() => setOpen(false)} className="text-foreground/90 hover:text-foreground" aria-label="Go to contact">Contact</a>
                 <div className="h-px bg-border my-2" />
-                <Button onClick={handleCall} className="w-full bg-premium text-premium-foreground hover:bg-premium/90">
+                <Button onClick={() => { setOpen(false); handleCall(); }} className="w-full bg-premium text-premium-foreground hover:bg-premium/90">
                   <Phone className="w-4 h-4 mr-2" /> Call Now
                 </Button>
-                <Button onClick={handleWhatsApp} variant="outline" className="w-full border-green-500 text-green-600 hover:bg-green-500 hover:text-white">
+                <Button onClick={() => { setOpen(false); handleWhatsApp(); }} variant="outline" className="w-full border-green-500 text-green-600 hover:bg-green-500 hover:text-white">
                   <MessageCircle className="w-4 h-4 mr-2" /> WhatsApp
                 </Button>
               </div>

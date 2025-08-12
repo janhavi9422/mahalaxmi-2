@@ -143,20 +143,6 @@ export function ContactSection() {
               </div>
             </div>
 
-            <Card className="bg-premium/10 backdrop-blur-sm border-premium/30 mt-6">
-              <CardContent className="p-4 text-center">
-                <h4 className="font-semibold text-luxury-foreground mb-2">🎉 Limited Time Offer</h4>
-                <p className="text-luxury-foreground/80 text-sm mb-3">
-                  Book now and get special discounts + free site visit
-                </p>
-                <Button
-                  onClick={handleWhatsApp}
-                  className="w-full bg-premium text-premium-foreground hover:bg-premium/90 font-semibold"
-                >
-                  Claim Offer Now
-                </Button>
-              </CardContent>
-            </Card>
           </div>
         </div>
       </div>
