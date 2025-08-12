@@ -79,7 +79,7 @@ const properties = [
 
 export function PropertiesSection() {
   return (
-    <section className="py-20 bg-background">
+    <section id="properties" className="py-20 bg-background">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="font-heading text-4xl md:text-5xl font-bold text-luxury mb-4">

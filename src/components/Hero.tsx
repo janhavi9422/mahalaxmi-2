@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Phone, MessageCircle, Award, Users, Building } from "lucide-react";
 import { CounterAnimation } from "./CounterAnimation";
 import { CountdownTimer } from "./CountdownTimer";
+import heroBg from "@/assets/hero-bg.jpg";
 
 export function Hero() {
   const handleCall = () => {
@@ -14,13 +15,21 @@ export function Hero() {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-gradient-hero overflow-hidden">
-      {/* Background Pattern */}
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background Image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: `url(${heroBg})` }}
+        aria-hidden="true"
+      />
+      {/* Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-primary/70 to-luxury/90" aria-hidden="true" />
+      {/* Subtle Pattern */}
       <div className="absolute inset-0 opacity-20" style={{
         backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
       }}></div>
       
-      <div className="container mx-auto px-6 text-center relative z-10">
+      <div className="container mx-auto px-6 text-center relative z-10 pt-24">
         <div className="max-w-4xl mx-auto space-y-8">
           {/* Company Logo/Name */}
           <div className="space-y-4">
@@ -33,7 +42,8 @@ export function Hero() {
             </p>
           </div>
 
-          {/* Timer */}
+          {/* Offer Title and Timer */}
+          <p className="uppercase tracking-wide text-sm md:text-base text-luxury-foreground/80">Before this timer ends, call to get 10% off</p>
           <CountdownTimer />
 
           {/* Tagline */}

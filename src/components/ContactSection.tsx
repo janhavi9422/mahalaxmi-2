@@ -14,7 +14,7 @@ export function ContactSection() {
   };
 
   return (
-    <section className="py-20 bg-gradient-hero">
+    <section id="contact" className="py-20 bg-gradient-hero">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="font-heading text-4xl md:text-5xl font-bold text-luxury-foreground mb-4">
