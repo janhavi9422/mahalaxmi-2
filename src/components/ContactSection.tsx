@@ -5,140 +5,118 @@ import { Phone, MessageCircle, MapPin, Mail, Clock, Building } from "lucide-reac
 
 export function ContactSection() {
   const handleCall = () => {
-    window.open("tel:+919876543210", "_self");
+  window.open("tel:+918552815725", "_self");
   };
 
   const handleWhatsApp = () => {
     const message = "Hi, I would like to schedule a site visit and get more information about your properties.";
-    window.open(`https://wa.me/919876543210?text=${encodeURIComponent(message)}`, "_blank");
+  window.open(`https://wa.me/918552815725?text=${encodeURIComponent(message)}`, "_blank");
   };
 
   return (
-    <section id="contact" className="py-20 bg-gradient-hero">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="font-heading text-4xl md:text-5xl font-bold text-luxury-foreground mb-4">
+    <section id="contact" className="py-12 md:py-16 lg:py-20 bg-gray-900 text-white">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="text-center mb-10 md:mb-16">
+          <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4">
             Ready to Book Your Dream Property?
           </h2>
-          <p className="text-xl text-luxury-foreground/80 max-w-2xl mx-auto">
+          <p className="text-base md:text-lg text-gray-300 max-w-2xl mx-auto">
             Contact us today for site visits, property details, and exclusive offers
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 max-w-6xl mx-auto">
           {/* Contact Cards */}
-          <div className="space-y-6">
-            <Card className="bg-luxury-foreground/10 backdrop-blur-sm border-luxury-foreground/20 hover:bg-luxury-foreground/15 transition-all duration-300">
-              <CardContent className="p-6">
-                <div className="flex items-center gap-4">
-                  <div className="bg-premium rounded-full p-3">
-                    <Phone className="w-6 h-6 text-premium-foreground" />
+          <div className="space-y-4 md:space-y-6">
+            <Card className="bg-gray-800 border-gray-700 hover:bg-gray-700 transition-all duration-300">
+              <CardContent className="p-4 md:p-6">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                  <div className="bg-yellow-500 rounded-full p-2 md:p-3">
+                    <Phone className="w-5 h-5 md:w-6 md:h-6 text-black" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="font-semibold text-luxury-foreground text-lg">Call Us Now</h3>
-                    <p className="text-luxury-foreground/70">Get instant assistance from our property experts</p>
-                    <p className="text-premium font-bold text-xl mt-1">+91 98765 43210</p>
+                    <h3 className="font-semibold text-white text-lg">Call Us Now</h3>
+                    <p className="text-gray-400 text-sm md:text-base">Get instant assistance from our property experts</p>
+                    <p className="text-yellow-500 font-bold text-lg md:text-xl mt-1">85528 15725</p>
                   </div>
                   <Button
                     onClick={handleCall}
-                    className="bg-premium text-premium-foreground hover:bg-premium/90 hover:shadow-premium transition-all duration-300"
+                    className="mt-2 sm:mt-0 w-full sm:w-auto bg-yellow-500 text-black hover:bg-yellow-600 transition-all duration-300 text-sm md:text-base py-2 px-4 rounded-md"
                   >
-                    Call
+                    Call Now
                   </Button>
                 </div>
               </CardContent>
             </Card>
 
-            <Card className="bg-luxury-foreground/10 backdrop-blur-sm border-luxury-foreground/20 hover:bg-luxury-foreground/15 transition-all duration-300">
-              <CardContent className="p-6">
-                <div className="flex items-center gap-4">
-                  <div className="bg-green-500 rounded-full p-3">
-                    <MessageCircle className="w-6 h-6 text-white" />
+            <Card className="bg-gray-800 border-gray-700 hover:bg-gray-700 transition-all duration-300">
+              <CardContent className="p-4 md:p-6">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                  <div className="bg-green-600 rounded-full p-2 md:p-3">
+                    <MessageCircle className="w-5 h-5 md:w-6 md:h-6 text-white" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="font-semibold text-luxury-foreground text-lg">WhatsApp Chat</h3>
-                    <p className="text-luxury-foreground/70">Chat with us for quick responses and property updates</p>
-                    <p className="text-green-400 font-bold text-xl mt-1">+91 98765 43210</p>
+                    <h3 className="font-semibold text-white text-lg">WhatsApp Chat</h3>
+                    <p className="text-gray-400 text-sm md:text-base">Chat with us for quick responses and property updates</p>
+                    <p className="text-green-500 font-bold text-lg md:text-xl mt-1">85528 15725</p>
                   </div>
                   <Button
                     onClick={handleWhatsApp}
-                    className="bg-green-500 text-white hover:bg-green-600 transition-all duration-300"
+                    className="mt-2 sm:mt-0 w-full sm:w-auto bg-green-600 text-white hover:bg-green-700 transition-all duration-300 text-sm md:text-base py-2 px-4 rounded-md"
                   >
-                    Chat
+                    WhatsApp
                   </Button>
                 </div>
               </CardContent>
             </Card>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <Card className="bg-luxury-foreground/5 backdrop-blur-sm border-luxury-foreground/20">
-                <CardContent className="p-4 text-center">
-                  <MapPin className="w-6 h-6 text-premium mx-auto mb-2" />
-                  <h4 className="font-semibold text-luxury-foreground">Office Address</h4>
-                  <p className="text-sm text-luxury-foreground/70 mt-1">
-                    123 Business Centre,<br />
-                    Civil Lines, Nagpur - 440001
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="bg-luxury-foreground/5 backdrop-blur-sm border-luxury-foreground/20">
-                <CardContent className="p-4 text-center">
-                  <Mail className="w-6 h-6 text-premium mx-auto mb-2" />
-                  <h4 className="font-semibold text-luxury-foreground">Email Us</h4>
-                  <p className="text-sm text-luxury-foreground/70 mt-1">
-                    info@mahalaxmidevelopers.com<br />
-                    sales@mahalaxmidevelopers.com
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
+            {/* Removed office address and email cards */}
           </div>
 
           {/* Why Choose Us */}
-          <div className="space-y-6">
-            <h3 className="font-heading text-2xl font-bold text-luxury-foreground mb-6">
+          <div className="space-y-4 md:space-y-6">
+            <h3 className="font-heading text-xl md:text-2xl font-bold text-white mb-4 md:mb-6">
               Why Choose Mahalaxmi Developers?
             </h3>
             
             <div className="space-y-4">
               <div className="flex items-start gap-3">
-                <div className="bg-premium rounded-full p-2 mt-1">
-                  <Building className="w-4 h-4 text-premium-foreground" />
+                <div className="bg-yellow-500 rounded-full p-2 mt-1">
+                  <Building className="w-4 h-4 text-black" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-luxury-foreground">15+ Years of Excellence</h4>
-                  <p className="text-luxury-foreground/70 text-sm">Trusted name in Nagpur's real estate market</p>
+                  <h4 className="font-semibold text-white text-base md:text-lg">15+ Years of Excellence</h4>
+                  <p className="text-gray-400 text-xs md:text-sm">Trusted name in Nagpur's real estate market</p>
                 </div>
               </div>
 
               <div className="flex items-start gap-3">
-                <div className="bg-premium rounded-full p-2 mt-1">
-                  <Clock className="w-4 h-4 text-premium-foreground" />
+                <div className="bg-yellow-500 rounded-full p-2 mt-1">
+                  <Clock className="w-4 h-4 text-black" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-luxury-foreground">On-Time Delivery</h4>
-                  <p className="text-luxury-foreground/70 text-sm">100% track record of timely project completion</p>
+                  <h4 className="font-semibold text-white text-base md:text-lg">On-Time Delivery</h4>
+                  <p className="text-gray-400 text-xs md:text-sm">100% track record of timely project completion</p>
                 </div>
               </div>
 
               <div className="flex items-start gap-3">
-                <div className="bg-premium rounded-full p-2 mt-1">
-                  <Phone className="w-4 h-4 text-premium-foreground" />
+                <div className="bg-yellow-500 rounded-full p-2 mt-1">
+                  <Phone className="w-4 h-4 text-black" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-luxury-foreground">24/7 Customer Support</h4>
-                  <p className="text-luxury-foreground/70 text-sm">Always available for your queries and assistance</p>
+                  <h4 className="font-semibold text-white text-base md:text-lg">24/7 Customer Support</h4>
+                  <p className="text-gray-400 text-xs md:text-sm">Always available for your queries and assistance</p>
                 </div>
               </div>
 
               <div className="flex items-start gap-3">
-                <div className="bg-premium rounded-full p-2 mt-1">
-                  <MapPin className="w-4 h-4 text-premium-foreground" />
+                <div className="bg-yellow-500 rounded-full p-2 mt-1">
+                  <MapPin className="w-4 h-4 text-black" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-luxury-foreground">Prime Locations</h4>
-                  <p className="text-luxury-foreground/70 text-sm">Strategic locations across Nagpur's best areas</p>
+                  <h4 className="font-semibold text-white text-base md:text-lg">Prime Locations</h4>
+                  <p className="text-gray-400 text-xs md:text-sm">Strategic locations across Nagpur's best areas</p>
                 </div>
               </div>
             </div>

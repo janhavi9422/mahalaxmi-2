@@ -13,12 +13,11 @@ export function QuotationForm() {
   const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: "",
-    phone: "",
+    phone: "8552815725",
     email: "",
     propertyType: "",
     budget: "",
     location: "",
-    bedrooms: "",
     amenities: [] as string[],
     additionalRequirements: ""
   });
@@ -71,7 +70,7 @@ ${formData.additionalRequirements}
 Please provide a detailed quotation for properties matching these requirements.
     `.trim();
 
-    window.open(`https://wa.me/919876543210?text=${encodeURIComponent(message)}`, "_blank");
+  window.open(`https://wa.me/918552815725?text=${encodeURIComponent(message)}`, "_blank");
     
     toast({
       title: "Quotation Request Sent!",
@@ -84,97 +83,89 @@ Please provide a detailed quotation for properties matching these requirements.
       phone: "",
       email: "",
       propertyType: "",
-      budget: "",
-      location: "",
-      bedrooms: "",
-      amenities: [],
       additionalRequirements: ""
     });
   };
 
   return (
-    <div className="py-16">
-      <div className="container mx-auto px-6">
-        <Card className="max-w-4xl mx-auto bg-luxury-foreground/5 backdrop-blur-sm border-luxury-foreground/20">
-          <CardHeader className="text-center">
-            <div className="flex justify-center mb-4">
-              <div className="bg-premium rounded-full p-3">
-                <FileText className="w-8 h-8 text-premium-foreground" />
+    <div className="py-10 md:py-16">
+      <div className="container mx-auto px-4 sm:px-6">
+        <Card className="max-w-4xl mx-auto bg-gray-800 border-gray-700">
+          <CardHeader className="text-center p-4 md:p-6">
+            <div className="flex justify-center mb-3 md:mb-4">
+              <div className="bg-yellow-500 rounded-full p-2 md:p-3">
+                <FileText className="w-6 h-6 md:w-8 md:h-8 text-black" />
               </div>
             </div>
-            <CardTitle className="font-heading text-3xl font-bold text-luxury-foreground">
+            <CardTitle className="font-heading text-xl md:text-2xl lg:text-3xl font-bold text-white">
               Get Your Dream Property Quotation
             </CardTitle>
-            <p className="text-luxury-foreground/70 text-lg">
+            <p className="text-gray-400 text-sm md:text-base mt-2">
               Not sure which property suits you? Fill out this form and we'll send you personalized options!
             </p>
           </CardHeader>
 
-          <CardContent className="p-8">
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <Label htmlFor="name" className="text-luxury-foreground font-medium">Full Name *</Label>
+          <CardContent className="p-4 md:p-6 lg:p-8">
+            <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+                  <Label htmlFor="name" className="text-white text-sm font-medium">Full Name *</Label>
                   <Input
                     id="name"
                     required
                     value={formData.name}
                     onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
-                    className="bg-luxury-foreground/10 border-luxury-foreground/20 text-luxury-foreground"
+                    className="bg-gray-700 border-gray-600 text-white text-sm"
                     placeholder="Enter your full name"
                   />
                 </div>
 
-                <div className="space-y-2">
-                  <Label htmlFor="phone" className="text-luxury-foreground font-medium">Phone Number *</Label>
+                <div className="space-y-1 md:space-y-2">
+                  <Label htmlFor="phone" className="text-white text-sm font-medium">Phone Number *</Label>
                   <Input
                     id="phone"
                     type="tel"
                     required
                     value={formData.phone}
                     onChange={(e) => setFormData(prev => ({ ...prev, phone: e.target.value }))}
-                    className="bg-luxury-foreground/10 border-luxury-foreground/20 text-luxury-foreground"
-                    placeholder="+91 98765 43210"
+                    className="bg-gray-700 border-gray-600 text-white text-sm"
+                    placeholder="8552815725"
                   />
                 </div>
 
-                <div className="space-y-2">
-                  <Label htmlFor="email" className="text-luxury-foreground font-medium">Email Address</Label>
+                <div className="space-y-1 md:space-y-2">
+                  <Label htmlFor="email" className="text-white text-sm font-medium">Email Address</Label>
                   <Input
                     id="email"
                     type="email"
                     value={formData.email}
                     onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
-                    className="bg-luxury-foreground/10 border-luxury-foreground/20 text-luxury-foreground"
+                    className="bg-gray-700 border-gray-600 text-white text-sm"
                     placeholder="your.email@example.com"
                   />
                 </div>
 
-                <div className="space-y-2">
-                  <Label className="text-luxury-foreground font-medium">Property Type *</Label>
+                <div className="space-y-1 md:space-y-2">
+                  <Label className="text-white text-sm font-medium">Property Type *</Label>
                   <Select required onValueChange={(value) => setFormData(prev => ({ ...prev, propertyType: value }))}>
-                    <SelectTrigger className="bg-luxury-foreground/10 border-luxury-foreground/20 text-luxury-foreground">
+                    <SelectTrigger className="bg-gray-700 border-gray-600 text-white text-sm">
                       <SelectValue placeholder="Select property type" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="apartment">Apartment</SelectItem>
-                      <SelectItem value="villa">Villa</SelectItem>
-                      <SelectItem value="penthouse">Penthouse</SelectItem>
-                      <SelectItem value="townhouse">Townhouse</SelectItem>
-                      <SelectItem value="commercial">Commercial Space</SelectItem>
-                      <SelectItem value="plot">Plot/Land</SelectItem>
+                        <SelectItem value="Residential Plot">Residential Plot</SelectItem>
+                        <SelectItem value="Commercial Plot">Commercial Plot</SelectItem>
+                        <SelectItem value="Apartment">Apartment</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
 
-                <div className="space-y-2">
-                  <Label className="text-luxury-foreground font-medium">Budget Range *</Label>
+                <div className="space-y-1 md:space-y-2">
+                  <Label className="text-white text-sm font-medium">Budget Range *</Label>
                   <Select required onValueChange={(value) => setFormData(prev => ({ ...prev, budget: value }))}>
-                    <SelectTrigger className="bg-luxury-foreground/10 border-luxury-foreground/20 text-luxury-foreground">
+                    <SelectTrigger className="bg-gray-700 border-gray-600 text-white text-sm">
                       <SelectValue placeholder="Select your budget" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="30-50-lakh">₹30 - ₹50 Lakh</SelectItem>
+                      <SelectItem value="20-50-lakh">₹20 - ₹50 Lakh</SelectItem>
                       <SelectItem value="50-75-lakh">₹50 - ₹75 Lakh</SelectItem>
                       <SelectItem value="75-1-crore">₹75 Lakh - ₹1 Crore</SelectItem>
                       <SelectItem value="1-2-crore">₹1 - ₹2 Crore</SelectItem>
@@ -183,55 +174,41 @@ Please provide a detailed quotation for properties matching these requirements.
                   </Select>
                 </div>
 
-                <div className="space-y-2">
-                  <Label className="text-luxury-foreground font-medium">Preferred Location</Label>
+                <div className="space-y-1 md:space-y-2">
+                  <Label className="text-white text-sm font-medium">Preferred Location</Label>
                   <Select onValueChange={(value) => setFormData(prev => ({ ...prev, location: value }))}>
-                    <SelectTrigger className="bg-luxury-foreground/10 border-luxury-foreground/20 text-luxury-foreground">
+                    <SelectTrigger className="bg-gray-700 border-gray-600 text-white text-sm">
                       <SelectValue placeholder="Select preferred area" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="civil-lines">Civil Lines</SelectItem>
-                      <SelectItem value="dharampeth">Dharampeth</SelectItem>
-                      <SelectItem value="sitabuldi">Sitabuldi</SelectItem>
-                      <SelectItem value="wardha-road">Wardha Road</SelectItem>
-                      <SelectItem value="koradi-road">Koradi Road</SelectItem>
-                      <SelectItem value="sadar">Sadar</SelectItem>
-                      <SelectItem value="any">Any Good Location</SelectItem>
+                    <SelectItem value="Wardha Road">Wardha Road</SelectItem>
+                    <SelectItem value="Besa">Besa</SelectItem>
+                    <SelectItem value="Beltarodi">Beltarodi</SelectItem>
+                    <SelectItem value="Shankarpur">Shankarpur</SelectItem>
+                    <SelectItem value="Samruddhi Expressway">Samruddhi Expressway</SelectItem>
+                    <SelectItem value="Umred Road">Umred Road</SelectItem>
+                    <SelectItem value="Bhandara - Jabalpur Highway">Bhandara - Jabalpur Highway</SelectItem>
+                    <SelectItem value="Kamptee Road">Kamptee Road</SelectItem>
+                    <SelectItem value="Katol Road">Katol Road</SelectItem>
                     </SelectContent>
                   </Select>
-                </div>
+                    </div>
+                    {/* Number of Bedrooms field fully removed */}
 
-                <div className="space-y-2">
-                  <Label className="text-luxury-foreground font-medium">Number of Bedrooms</Label>
-                  <Select onValueChange={(value) => setFormData(prev => ({ ...prev, bedrooms: value }))}>
-                    <SelectTrigger className="bg-luxury-foreground/10 border-luxury-foreground/20 text-luxury-foreground">
-                      <SelectValue placeholder="Select bedrooms" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="1">1 BHK</SelectItem>
-                      <SelectItem value="2">2 BHK</SelectItem>
-                      <SelectItem value="3">3 BHK</SelectItem>
-                      <SelectItem value="4">4 BHK</SelectItem>
-                      <SelectItem value="5plus">5+ BHK</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-              </div>
-
-              <div className="space-y-4">
-                <Label className="text-luxury-foreground font-medium">Desired Amenities (Select all that apply)</Label>
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+              <div className="space-y-2 md:space-y-4">
+                <Label className="text-white text-sm font-medium">Desired Amenities (Select all that apply)</Label>
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 md:gap-3">
                   {amenitiesList.map((amenity) => (
                     <div key={amenity} className="flex items-center space-x-2">
                       <Checkbox
                         id={amenity}
                         checked={formData.amenities.includes(amenity)}
                         onCheckedChange={(checked) => handleAmenityChange(amenity, checked as boolean)}
-                        className="border-luxury-foreground/30 data-[state=checked]:bg-premium data-[state=checked]:border-premium"
+                        className="border-gray-500 data-[state=checked]:bg-yellow-500 data-[state=checked]:border-yellow-500"
                       />
                       <Label
                         htmlFor={amenity}
-                        className="text-sm text-luxury-foreground/80 cursor-pointer"
+                        className="text-xs md:text-sm text-gray-300 cursor-pointer"
                       >
                         {amenity}
                       </Label>
@@ -240,27 +217,26 @@ Please provide a detailed quotation for properties matching these requirements.
                 </div>
               </div>
 
-              <div className="space-y-2">
-                <Label htmlFor="requirements" className="text-luxury-foreground font-medium">Additional Requirements</Label>
+              <div className="space-y-1 md:space-y-2">
+                <Label htmlFor="requirements" className="text-white text-sm font-medium">Additional Requirements</Label>
                 <Textarea
                   id="requirements"
                   value={formData.additionalRequirements}
                   onChange={(e) => setFormData(prev => ({ ...prev, additionalRequirements: e.target.value }))}
-                  className="bg-luxury-foreground/10 border-luxury-foreground/20 text-luxury-foreground min-h-[100px]"
+                  className="bg-gray-700 border-gray-600 text-white text-sm min-h-[80px] md:min-h-[100px]"
                   placeholder="Any specific requirements, preferences, or questions you have..."
                 />
               </div>
 
-              <div className="text-center pt-6">
+              <div className="text-center pt-4 md:pt-6">
                 <Button
                   type="submit"
-                  size="lg"
-                  className="bg-gradient-luxury text-premium-foreground hover:shadow-premium transition-all duration-300 font-semibold px-8"
+                  className="bg-yellow-500 text-black hover:bg-yellow-600 transition-all duration-300 font-medium text-sm md:text-base py-2 px-4 md:py-3 md:px-6 rounded-md w-full sm:w-auto"
                 >
-                  <Send className="w-5 h-5 mr-2" />
+                  <Send className="w-4 h-4 md:w-5 md:h-5 mr-1.5 md:mr-2" />
                   Send Quotation Request
                 </Button>
-                <p className="text-luxury-foreground/60 text-sm mt-3">
+                <p className="text-gray-400 text-xs md:text-sm mt-2 md:mt-3">
                   We'll send your quotation via WhatsApp within 2 hours
                 </p>
               </div>

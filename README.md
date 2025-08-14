@@ -1,73 +1,157 @@
-# Welcome to your Lovable project
+# Mahalaxmi Developers - Property Showcase
 
-## Project info
+A modern, responsive website showcasing premium residential properties by Mahalaxmi Developers in Nagpur, Maharashtra.
 
-**URL**: https://lovable.dev/projects/786c281c-d48f-44a4-8ddb-02b7680c0fe5
+## 🏗️ Features
 
-## How can I edit this code?
+- **Professional Landing Page**: Modern design with hero section, project gallery, and contact information
+- **Property Showcase**: Detailed information about 6 premium residential projects
+- **Individual Property Pages**: Comprehensive details for each project including:
+  - High-quality images
+  - Detailed descriptions and specifications
+  - Location information and directions
+  - Amenities and features
+  - RERA information and pricing
+- **Responsive Design**: Optimized for desktop, tablet, and mobile devices
+- **Contact Integration**: Direct phone calls and WhatsApp messaging
+- **Modern UI/UX**: Built with Tailwind CSS and shadcn/ui components
 
-There are several ways of editing your application.
+## 🏢 Featured Projects
 
-**Use Lovable**
+1. **Mahalaxmi Nagar 25** - Premium 2 BHK apartments in Dharampeth
+2. **Mahalaxmi Nagar 31** - Luxury 3 BHK apartments in Civil Lines
+3. **Mahalaxmi Nagar 40** - Affordable luxury 2 BHK near Wardha Road
+4. **Mahalaxmi Nagar 41** - Family-friendly 2 BHK near Koradi Road
+5. **Mahalaxmi Nagar 42** - Premium 3 BHK in Sadar area
+6. **Mahalaxmi Nagar 43** - Ultra-premium 3 BHK in Dharampeth Extension
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/786c281c-d48f-44a4-8ddb-02b7680c0fe5) and start prompting.
+## 🛠️ Technology Stack
 
-Changes made via Lovable will be committed automatically to this repo.
+- **Frontend**: React 18 with TypeScript
+- **Styling**: Tailwind CSS
+- **UI Components**: shadcn/ui
+- **Routing**: React Router DOM
+- **Build Tool**: Vite
+- **Icons**: Lucide React
 
-**Use your preferred IDE**
+## 🚀 Getting Started
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Prerequisites
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- Node.js 18+ 
+- npm or yarn
 
-Follow these steps:
+### Installation
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd mahalaxmi-property-showcase
+```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+2. Install dependencies:
+```bash
+npm install
+```
 
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+3. Start the development server:
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+4. Open your browser and navigate to `http://localhost:5173`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Building for Production
 
-**Use GitHub Codespaces**
+```bash
+npm run build
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+The built files will be in the `dist` directory.
 
-## What technologies are used for this project?
+## 📁 Project Structure
 
-This project is built with:
+```
+src/
+├── components/          # Reusable UI components
+│   ├── ui/             # shadcn/ui components
+│   ├── Hero.tsx        # Hero section
+│   ├── Navbar.tsx      # Navigation bar
+│   ├── PropertiesSection.tsx  # Property gallery
+│   ├── PropertyCard.tsx       # Individual property cards
+│   ├── ContactSection.tsx     # Contact information
+│   └── Footer.tsx      # Footer
+├── pages/              # Page components
+│   ├── Index.tsx       # Home page
+│   ├── PropertyDetail.tsx     # Individual property page
+│   └── NotFound.tsx    # 404 page
+├── data/               # Data files
+│   └── properties.ts   # Property information
+├── assets/             # Images and static assets
+├── hooks/              # Custom React hooks
+├── lib/                # Utility functions
+└── App.tsx             # Main app component
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 🎨 Customization
 
-## How can I deploy this project?
+### Adding New Properties
 
-Simply open [Lovable](https://lovable.dev/projects/786c281c-d48f-44a4-8ddb-02b7680c0fe5) and click on Share -> Publish.
+1. Add property images to `src/assets/`
+2. Update the properties array in `src/data/properties.ts`
+3. Include all required fields: title, location, price, description, etc.
 
-## Can I connect a custom domain to my Lovable project?
+### Styling
 
-Yes, you can!
+The project uses Tailwind CSS with custom color schemes:
+- `luxury`: Primary brand colors
+- `premium`: Accent colors
+- `primary`: Interactive elements
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+### Contact Information
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+Update contact details in:
+- `src/components/Navbar.tsx`
+- `src/components/ContactSection.tsx`
+- `src/components/Footer.tsx`
+
+## 📱 Responsive Design
+
+The website is fully responsive with breakpoints:
+- Mobile: < 768px
+- Tablet: 768px - 1024px
+- Desktop: > 1024px
+
+## 🔧 Configuration
+
+### Environment Variables
+
+Create a `.env` file for any environment-specific configurations:
+
+```env
+VITE_APP_TITLE=Mahalaxmi Developers
+VITE_CONTACT_PHONE=+919876543210
+VITE_CONTACT_EMAIL=info@mahalaxmidevelopers.com
+```
+
+### Build Configuration
+
+The project uses Vite for building. Configuration can be found in:
+- `vite.config.ts` - Build configuration
+- `tailwind.config.ts` - Tailwind CSS configuration
+- `tsconfig.json` - TypeScript configuration
+
+## 📄 License
+
+This project is proprietary to Mahalaxmi Developers.
+
+## 🤝 Support
+
+For support and inquiries:
+- Phone: +91 98765 43210
+- Email: info@mahalaxmidevelopers.com
+- Office: 123 Business Centre, Civil Lines, Nagpur - 440001
+
+---
+
+**Mahalaxmi Developers** - Your Trusted Property Partner in Nagpur

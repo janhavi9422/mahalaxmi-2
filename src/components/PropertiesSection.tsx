@@ -1,119 +1,51 @@
 import { PropertyCard } from "./PropertyCard";
-import property1 from "@/assets/property1.jpg";
-import property2 from "@/assets/property2.jpg";
-import property3 from "@/assets/property3.jpg";
-import property4 from "@/assets/property4.jpg";
-import property5 from "@/assets/property5.jpg";
-import property6 from "@/assets/property6.jpg";
-
-const properties = [
-  {
-    id: 1,
-    title: "Mahalaxmi Heights",
-    location: "Civil Lines, Nagpur",
-    price: "₹85 Lakh onwards",
-    image: property1,
-    bedrooms: 3,
-    bathrooms: 2,
-    area: "1,200 sq ft",
-    type: "Apartment",
-    features: ["Modular Kitchen", "Gym & Pool", "24/7 Security", "Power Backup"]
-  },
-  {
-    id: 2,
-    title: "Royal Villa Paradise",
-    location: "Wardha Road, Nagpur",
-    price: "₹1.5 Cr onwards",
-    image: property2,
-    bedrooms: 4,
-    bathrooms: 3,
-    area: "2,500 sq ft",
-    type: "Villa",
-    features: ["Private Garden", "Swimming Pool", "Car Parking", "Gated Community"]
-  },
-  {
-    id: 3,
-    title: "Business Hub Complex",
-    location: "Sitabuldi, Nagpur",
-    price: "₹60 Lakh onwards",
-    image: property3,
-    area: "800 sq ft",
-    type: "Commercial",
-    features: ["Prime Location", "High-Speed Elevators", "24/7 Access", "Food Court"]
-  },
-  {
-    id: 4,
-    title: "Skyline Penthouse",
-    location: "Dharampeth, Nagpur",
-    price: "₹2.2 Cr onwards",
-    image: property4,
-    bedrooms: 3,
-    bathrooms: 3,
-    area: "1,800 sq ft",
-    type: "Penthouse",
-    features: ["Terrace Garden", "City View", "Premium Interiors", "Smart Home"]
-  },
-  {
-    id: 5,
-    title: "Green Valley Homes",
-    location: "Koradi Road, Nagpur",
-    price: "₹65 Lakh onwards",
-    image: property5,
-    bedrooms: 2,
-    bathrooms: 2,
-    area: "1,100 sq ft",
-    type: "Townhouse",
-    features: ["Eco-Friendly", "Kids Play Area", "Jogging Track", "Club House"]
-  },
-  {
-    id: 6,
-    title: "Elite Shopping Plaza",
-    location: "Sadar, Nagpur",
-    price: "₹45 Lakh onwards",
-    image: property6,
-    area: "600 sq ft",
-    type: "Retail",
-    features: ["High Footfall", "Brand Outlets", "Parking Facility", "Food Zone"]
-  }
-];
+import { properties } from "@/data/properties";
 
 export function PropertiesSection() {
   return (
-    <section id="properties" className="py-20 bg-background">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="font-heading text-4xl md:text-5xl font-bold text-luxury mb-4">
-            Featured Properties
+    <section id="properties" className="py-12 md:py-16 lg:py-20 bg-gray-50">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="text-center mb-10 md:mb-16">
+          <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 md:mb-4">
+            Our Projects
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Discover our handpicked selection of premium properties designed for modern living and business success
+          <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
+            Explore our exclusive collection of RERA-approved residential properties across prime locations in Nagpur
           </p>
-          <div className="w-24 h-1 bg-gradient-luxury mx-auto mt-6"></div>
+          <div className="w-16 md:w-24 h-1 bg-yellow-500 mx-auto mt-4 md:mt-6"></div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
           {properties.map((property) => (
-            <PropertyCard key={property.id} {...property} />
+            <div 
+              key={property.id} 
+              className="transition-all duration-300"
+            >
+              <PropertyCard 
+                {...property} 
+                description={property.description}
+              />
+            </div>
           ))}
         </div>
 
-        <div className="text-center">
-          <p className="text-muted-foreground mb-6">
+        <div className="text-center mt-12 md:mt-16">
+          <p className="text-gray-600 mb-4 md:mb-6 text-sm md:text-base">
             Don't see what you're looking for? We have more exclusive properties available.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <button
-              onClick={() => window.open("tel:+919876543210", "_self")}
-              className="bg-gradient-hero text-luxury-foreground px-8 py-3 rounded-lg font-semibold hover:shadow-luxury transition-all duration-300"
+              onClick={() => window.open("tel:+918552815725", "_self")}
+              className="bg-yellow-500 text-black px-6 py-2 md:px-8 md:py-3 rounded-md text-sm md:text-base font-medium hover:bg-yellow-600 transition-all duration-300"
             >
               Call for More Properties
             </button>
             <button
               onClick={() => {
                 const message = "Hi, I would like to see more properties from Mahalaxmi Developers.";
-                window.open(`https://wa.me/919876543210?text=${encodeURIComponent(message)}`, "_blank");
+                window.open(`https://wa.me/918552815725?text=${encodeURIComponent(message)}`, "_blank");
               }}
-              className="border-2 border-green-500 text-green-600 px-8 py-3 rounded-lg font-semibold hover:bg-green-500 hover:text-white transition-all duration-300"
+              className="bg-green-600 text-white px-6 py-2 md:px-8 md:py-3 rounded-md text-sm md:text-base font-medium hover:bg-green-700 transition-all duration-300"
             >
               WhatsApp for Details
             </button>

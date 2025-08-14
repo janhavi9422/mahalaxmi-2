@@ -2,7 +2,9 @@ import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { MapPin, Bed, Bath, Square, Phone, MessageCircle, Eye } from "lucide-react";
+import { MapPin, Phone, MessageCircle, Eye } from "lucide-react";
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
+import { CheckCircle } from "lucide-react";
 
 interface PropertyCardProps {
   id: number;
@@ -10,11 +12,9 @@ interface PropertyCardProps {
   location: string;
   price: string;
   image: string;
-  bedrooms?: number;
-  bathrooms?: number;
-  area: string;
   type: string;
   features: string[];
+  description?: string;
 }
 
 export function PropertyCard({
@@ -23,16 +23,14 @@ export function PropertyCard({
   location,
   price,
   image,
-  bedrooms,
-  bathrooms,
-  area,
   type,
   features,
+  description,
 }: PropertyCardProps) {
   const navigate = useNavigate();
   
   const handleCall = () => {
-    window.open("tel:+919876543210", "_self");
+  window.open("tel:+918552815725", "_self");
   };
 
   const handleViewDetails = () => {
@@ -41,97 +39,92 @@ export function PropertyCard({
 
   const handleWhatsApp = () => {
     const message = `Hi, I'm interested in ${title} located at ${location}. Please provide more details.`;
-    window.open(`https://wa.me/919876543210?text=${encodeURIComponent(message)}`, "_blank");
+  window.open(`https://wa.me/918552815725?text=${encodeURIComponent(message)}`, "_blank");
   };
 
   return (
-    <Card className="group overflow-hidden border-0 shadow-card hover:shadow-luxury transition-all duration-500 hover:-translate-y-2 bg-gradient-card backdrop-blur-sm">
+    <Card className="group overflow-hidden border-0 shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1 bg-white">
       <div className="relative overflow-hidden">
         <img
           src={image}
           alt={title}
-          className="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110"
+          className="w-full h-48 sm:h-56 md:h-64 object-cover transition-transform duration-500 group-hover:scale-105"
         />
-        <div className="absolute top-4 left-4">
-          <Badge className="bg-premium text-premium-foreground font-medium px-3 py-1">
-            {type}
-          </Badge>
-        </div>
-        <div className="absolute top-4 right-4">
-          <div className="bg-luxury/90 backdrop-blur-sm text-luxury-foreground px-3 py-2 rounded-lg font-bold">
-            {price}
-          </div>
-        </div>
+  {/* Removed type badge */}
+  {/* Removed price display */}
       </div>
       
-      <CardContent className="p-6 space-y-4">
+      <CardContent className="p-4 sm:p-5 space-y-3">
         <div className="space-y-2">
-          <h3 className="font-heading text-xl font-semibold text-luxury group-hover:text-primary transition-colors">
+          <h3 className="font-heading text-lg sm:text-xl font-semibold text-gray-900 group-hover:text-yellow-600 transition-colors line-clamp-1">
             {title}
           </h3>
-          <div className="flex items-center text-muted-foreground">
-            <MapPin className="w-4 h-4 mr-1" />
-            <span className="text-sm">{location}</span>
+          <div className="flex items-center text-gray-600">
+            <MapPin className="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0" />
+            <span className="text-xs sm:text-sm line-clamp-1">{location}</span>
           </div>
+          {description && (
+            <p className="text-xs sm:text-sm text-gray-600 line-clamp-2">
+              {description}
+            </p>
+          )}
+
         </div>
 
-        {(bedrooms || bathrooms || area) && (
-          <div className="flex items-center gap-4 text-sm text-muted-foreground border-t pt-4">
-            {bedrooms && (
-              <div className="flex items-center gap-1">
-                <Bed className="w-4 h-4" />
-                <span>{bedrooms} Beds</span>
-              </div>
-            )}
-            {bathrooms && (
-              <div className="flex items-center gap-1">
-                <Bath className="w-4 h-4" />
-                <span>{bathrooms} Baths</span>
-              </div>
-            )}
-            <div className="flex items-center gap-1">
-              <Square className="w-4 h-4" />
-              <span>{area}</span>
-            </div>
-          </div>
-        )}
-
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-1 sm:gap-2">
           {features.slice(0, 3).map((feature, index) => (
             <Badge
               key={index}
               variant="secondary"
-              className="text-xs bg-secondary/50 hover:bg-secondary/70 transition-colors"
+              className="text-xs bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors"
             >
               {feature}
             </Badge>
           ))}
         </div>
 
-        <div className="flex gap-2 pt-4">
+        {/* Amenities Accordion for each card */}
+        <Accordion type="single" collapsible className="mt-2">
+          <AccordionItem value="amenities" className="rounded-lg bg-yellow-50 border border-yellow-100">
+            <AccordionTrigger className="flex items-center gap-2 px-3 py-2 text-sm font-semibold text-yellow-900">
+              <span className="bg-yellow-100 rounded-full p-1"><CheckCircle className="text-yellow-500 w-5 h-5" /></span>
+              Amenities
+            </AccordionTrigger>
+            <AccordionContent className="px-3 pb-2 text-xs text-gray-700">
+              <ul className="space-y-1">
+                <li>Internal Cement Concrete Road</li>
+                <li>Sewage Line</li>
+                <li>Electric Network With Transformer</li>
+                <li>Kids Park</li>
+              </ul>
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
+
+
+        <div className="grid grid-cols-2 gap-2 pt-3">
           <Button
             onClick={handleViewDetails}
             variant="outline"
-            className="flex-1 border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 font-medium"
+            className="w-full border-yellow-500 text-yellow-600 hover:bg-yellow-500 hover:text-white transition-all duration-300 text-xs sm:text-sm font-medium"
           >
-            <Eye className="w-4 h-4 mr-2" />
+            <Eye className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
             View Details
           </Button>
           <Button
             onClick={handleCall}
-            className="flex-1 bg-gradient-hero text-luxury-foreground hover:shadow-premium transition-all duration-300 font-medium"
+            className="w-full bg-yellow-500 text-black hover:bg-yellow-600 transition-all duration-300 text-xs sm:text-sm font-medium"
           >
-            <Phone className="w-4 h-4 mr-2" />
+            <Phone className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
             Call
           </Button>
         </div>
-        
+
         <Button
           onClick={handleWhatsApp}
-          variant="outline"
-          className="w-full mt-2 border-green-500 text-green-600 hover:bg-green-500 hover:text-white transition-all duration-300 font-medium"
+          className="w-full mt-2 bg-green-600 text-white hover:bg-green-700 transition-all duration-300 text-xs sm:text-sm font-medium"
         >
-          <MessageCircle className="w-4 h-4 mr-2" />
+          <MessageCircle className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
           WhatsApp for Details
         </Button>
       </CardContent>
