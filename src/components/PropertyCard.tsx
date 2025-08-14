@@ -38,8 +38,8 @@ export function PropertyCard({
   };
 
   const handleWhatsApp = () => {
-    const message = `Hi, I'm interested in ${title} located at ${location}. Please provide more details.`;
-  window.open(`https://wa.me/918552815725?text=${encodeURIComponent(message)}`, "_blank");
+    const message = `Hi, I am interested in this property: ${title}. Please share more details.`;
+    window.open(`https://wa.me/918552815725?text=${encodeURIComponent(message)}`, "_blank");
   };
 
   return (

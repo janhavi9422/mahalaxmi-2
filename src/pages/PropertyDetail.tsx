@@ -42,8 +42,8 @@ const PropertyDetail = () => {
   };
 
   const handleWhatsApp = () => {
-    const message = `Hi, I'm interested in ${property.title} located at ${property.location}. Price: ${property.price}. Please provide more details and arrange a site visit.`;
-  window.open(`https://wa.me/918552815725?text=${encodeURIComponent(message)}`, "_blank");
+    const message = `Hi, I am interested in this property: ${property.title}. Please share more details.`;
+    window.open(`https://wa.me/918552815725?text=${encodeURIComponent(message)}`, "_blank");
   };
 
   const handleGetDirections = () => {
@@ -301,7 +301,7 @@ const PropertyDetail = () => {
 
                    <div className="text-center pt-4 border-t">
                      <p className="text-sm text-muted-foreground mb-2">Contact our property expert</p>
-                     <p className="font-semibold text-primary">+91 98765 43210</p>
+                     <p className="font-semibold text-primary">8552815725</p>
                      <p className="text-sm text-muted-foreground">Available 24/7</p>
                    </div>
                  </div>

@@ -72,7 +72,8 @@ export const properties: Property[] = [
       "BasketBall",
       "Sewage Treatment Plant",
       "Cricket Pitch",
-      "Club House"
+      "Club House",
+      "Swimming Pool"
     ],
     specifications: {
       construction: "NIT/NMRDA Sanctioned Layout",
