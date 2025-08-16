@@ -243,7 +243,7 @@ const PropertyDetail = () => {
 
                                        <div className="w-full">
                       {property.id === 1 ? (
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14898.094439565231!2d79.04255389999999!3d21.0117251!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4bdfb37dac643%3A0xfc0cd306d568d48f!2sJamtha%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1755335037454!5m2!1sen!2sin" width="100%" height="450" style={{border:0}} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" className="rounded-lg"></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3724.627870627396!2d79.034842!3d21.007548999999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjHCsDAwJzI3LjIiTiA3OcKwMDInMDUuNCJF!5e0!3m2!1sen!2sin!4v1755335723993!5m2!1sen!2sin" width="100%" height="450" style={{border:0}} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" className="rounded-lg"></iframe>
                       ) : property.id === 2 ? (
                         <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3722.8600278426256!2d79.10917599999999!3d21.078252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjHCsDA0JzQxLjciTiA3OcKwMDYnMzMuMCJF!5e0!3m2!1sen!2sin!4v1755246675187!5m2!1sen!2sin" width="100%" height="450" style={{border:0}} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" className="rounded-lg"></iframe>
                       ) : property.id === 3 ? (
