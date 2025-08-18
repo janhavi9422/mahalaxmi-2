@@ -4,6 +4,24 @@ import property3 from "@/assets/project40.jpeg";
 import property4 from "@/assets/41project.webp";
 import property5 from "@/assets/42project.webp";
 import property6 from "@/assets/property6.jpg";
+import img25 from "@/assets/25.webp";
+import img252 from "@/assets/252.webp";
+import img40webp from "@/assets/40project.webp";
+import img40jpg from "@/assets/40.webp";
+import img253 from "@/assets/253.webp";
+import img311 from "@/assets/image311.jpeg";
+import img312 from "@/assets/image312.jpeg";
+import img313 from "@/assets/image313.jpeg";
+import img314 from "@/assets/image314.jpeg";
+import img40 from "@/assets/project40.jpeg";
+import img41 from "@/assets/41.png";
+import img412 from "@/assets/412.png";
+import img413 from "@/assets/413.webp";
+import img414 from "@/assets/414.webp";
+import img415 from "@/assets/415.webp";
+import img416 from "@/assets/416.webp";
+import img42 from "@/assets/42.webp";
+import img422 from "@/assets/422.webp";
 
 export interface Property {
   id: number;
@@ -52,6 +70,14 @@ export const properties: Property[] = [
     price: "₹70 Lakh onwards",
     priceRange: "₹70 Lakh - ₹1.1 Crore",
     image: property4,
+    gallery: [
+  img41,
+  img412,
+  img413,
+  img414,
+  img415,
+  img416
+    ],
     area: "82 ACRE",
     type: "",
     features: ["NIT/NMRDA Sanctioned", "RERA Approved", "Investment Location", "Layout Fencing", "Plantation"],
@@ -105,6 +131,11 @@ export const properties: Property[] = [
     price: "₹75 Lakh onwards",
     priceRange: "₹75 Lakh - ₹1.2 Crore",
     image: property1,
+    gallery: [
+  img25,
+  img252,
+  img253
+    ],
     bedrooms: 2,
     bathrooms: 2,
     area: "30.58 ACRE",
@@ -157,6 +188,12 @@ export const properties: Property[] = [
     price: "₹85 Lakh onwards",
     priceRange: "₹85 Lakh - ₹1.5 Crore",
     image: property2,
+    gallery: [
+  img311,
+  img312,
+  img313,
+  img314
+    ],
     area: "10.5 ACRE",
     type: "",
     features: ["NIT/NMRDA Sanctioned", "RERA Approved", "Investment Location", "Layout Fencing", "Plantation"],
@@ -207,6 +244,11 @@ export const properties: Property[] = [
     price: "₹65 Lakh onwards",
     priceRange: "₹65 Lakh - ₹95 Lakh",
     image: property3,
+    gallery: [
+      img40,
+      img40webp,
+      img40jpg
+    ],
     area: "8.35 ACRE",
     type: "",
     features: ["NIT/NMRDA Sanctioned", "RERA Approved", "Investment Location", "Layout Fencing", "Plantation"],
@@ -257,6 +299,10 @@ export const properties: Property[] = [
     price: "₹80 Lakh onwards",
     priceRange: "₹80 Lakh - ₹1.3 Crore",
     image: property5,
+    gallery: [
+  img42,
+  img422
+    ],
     area: "8 ACRE",
     type: "",
     features: ["NIT/NMRDA Sanctioned", "RERA Approved", "Investment Location", "Layout Fencing", "Plantation"],

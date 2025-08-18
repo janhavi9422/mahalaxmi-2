@@ -7,9 +7,10 @@ import img414 from "@/assets/414.webp";
 import img415 from "@/assets/415.webp";
 import img416 from "@/assets/416.webp";
 import img40 from "@/assets/40.webp";
-import img31 from "@/assets/31.webp";
-import img312 from "@/assets/312.jpg";
-import img313 from "@/assets/313.jpg";
+import img311 from "@/assets/image311.jpeg";
+import img312 from "@/assets/image312.jpeg";
+import img313 from "@/assets/image313.jpeg";
+import img314 from "@/assets/image314.jpeg";
 import { useParams, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -19,6 +20,7 @@ import { getPropertyById } from "@/data/properties";
 import img25 from "@/assets/25.webp";
 import img252 from "@/assets/252.webp";
 import img253 from "@/assets/253.webp";
+import { ImageSlider } from "@/components/ImageSlider";
 
 const PropertyDetail = () => {
   const { id } = useParams();
@@ -38,12 +40,12 @@ const PropertyDetail = () => {
   }
 
   const handleCall = () => {
-  window.open("tel:+918552815725", "_self");
+  window.open("tel:+919763672641", "_self");
   };
 
   const handleWhatsApp = () => {
     const message = `Hi, I am interested in this property: ${property.title}. Please share more details.`;
-    window.open(`https://wa.me/918552815725?text=${encodeURIComponent(message)}`, "_blank");
+  window.open(`https://wa.me/919763672641?text=${encodeURIComponent(message)}`, "_blank");
   };
 
   const handleGetDirections = () => {
@@ -76,43 +78,17 @@ const PropertyDetail = () => {
                          {/* Image Gallery */}
             <div className="relative animate-fade-in">
               {property.id === 1 ? (
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <img src={img25} alt="Mahalaxmi Nagar 25 - 1" className="w-full h-96 object-cover rounded-xl shadow-luxury" />
-                  <img src={img252} alt="Mahalaxmi Nagar 25 - 2" className="w-full h-96 object-cover rounded-xl shadow-luxury" />
-                  <img src={img253} alt="Mahalaxmi Nagar 25 - 3" className="w-full h-96 object-cover rounded-xl shadow-luxury" />
-                </div>
+                <ImageSlider images={[img25, img252, img253]} heightClass="aspect-[3/2] w-full" />
               ) : property.id === 2 ? (
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <img src={img31} alt="Mahalaxmi Nagar 31 - 1" className="w-full h-96 object-cover rounded-xl shadow-luxury" />
-                  <img src={img312} alt="Mahalaxmi Nagar 31 - 2" className="w-full h-96 object-cover rounded-xl shadow-luxury" />
-                  <img src={img313} alt="Mahalaxmi Nagar 31 - 3" className="w-full h-96 object-cover rounded-xl shadow-luxury" />
-                </div>
+                <ImageSlider images={[img311, img312, img313, img314]} heightClass="aspect-[3/2] w-full" />
               ) : property.id === 3 ? (
-                <img
-                  src={img40}
-                  alt="Mahalaxmi Nagar 40"
-                  className="w-full h-96 object-cover rounded-xl shadow-luxury"
-                />
+                <ImageSlider images={[img40]} heightClass="aspect-[3/2] w-full" />
               ) : property.id === 4 ? (
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <img src={img41} alt="Mahalaxmi Nagar 41 - 1" className="w-full h-96 object-cover rounded-xl shadow-luxury" />
-                  <img src={img412} alt="Mahalaxmi Nagar 41 - 2" className="w-full h-96 object-cover rounded-xl shadow-luxury" />
-                  <img src={img413} alt="Mahalaxmi Nagar 41 - 3" className="w-full h-96 object-cover rounded-xl shadow-luxury" />
-                  <img src={img414} alt="Mahalaxmi Nagar 41 - 4" className="w-full h-96 object-cover rounded-xl shadow-luxury" />
-                  <img src={img415} alt="Mahalaxmi Nagar 41 - 5" className="w-full h-96 object-cover rounded-xl shadow-luxury" />
-                  <img src={img416} alt="Mahalaxmi Nagar 41 - 6" className="w-full h-96 object-cover rounded-xl shadow-luxury" />
-                </div>
+                <ImageSlider images={[img41, img412, img413, img414, img415, img416]} heightClass="aspect-[3/2] w-full" />
               ) : property.id === 5 ? (
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <img src={img42} alt="Mahalaxmi Nagar 42 - 1" className="w-full h-96 object-cover rounded-xl shadow-luxury" />
-                  <img src={img422} alt="Mahalaxmi Nagar 42 - 2" className="w-full h-96 object-cover rounded-xl shadow-luxury" />
-                </div>
+                <ImageSlider images={[img42, img422]} heightClass="aspect-[3/2] w-full" />
               ) : (
-                <img
-                  src={property.image}
-                  alt={property.title}
-                  className="w-full h-96 object-cover rounded-xl shadow-luxury"
-                />
+                <ImageSlider images={[property.image]} heightClass="aspect-[3/2] w-full" />
               )}
               <div className="absolute top-4 left-4">
                 <Badge className="bg-premium text-premium-foreground font-medium px-3 py-1">
@@ -293,7 +269,7 @@ const PropertyDetail = () => {
 
                    <div className="text-center pt-4 border-t">
                      <p className="text-sm text-muted-foreground mb-2">Contact our property expert</p>
-                     <p className="font-semibold text-primary">8552815725</p>
+                     <p className="font-semibold text-primary">9763672641</p>
                      <p className="text-sm text-muted-foreground">Available 24/7</p>
                    </div>
                  </div>

@@ -71,10 +71,14 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				}
 			},
+				fontFamily: {
+					'heading': ['Inter', 'Segoe UI', 'Arial', 'sans-serif'],
+					'body': ['Inter', 'Segoe UI', 'Arial', 'sans-serif'],
+				},
 			borderRadius: {
-				lg: 'var(--radius)',
-				md: 'calc(var(--radius) - 2px)',
-				sm: 'calc(var(--radius) - 4px)'
+					lg: '1.25rem',
+					md: '0.75rem',
+					sm: '0.5rem'
 			},
 			backgroundImage: {
 				'gradient-hero': 'var(--gradient-hero)',
@@ -86,10 +90,7 @@ export default {
 				'card': 'var(--shadow-card)',
 				'premium': 'var(--shadow-premium)',
 			},
-			fontFamily: {
-				'heading': ['Playfair Display', 'serif'],
-				'body': ['Inter', 'sans-serif'],
-			},
+			   // fontFamily moved above for modern look
 			keyframes: {
 				'accordion-down': {
 					from: {

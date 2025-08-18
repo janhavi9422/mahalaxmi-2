@@ -5,6 +5,11 @@ import { Badge } from "@/components/ui/badge";
 import { MapPin, Phone, MessageCircle, Eye } from "lucide-react";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 import { CheckCircle } from "lucide-react";
+import { ImageSlider } from "@/components/ImageSlider";
+import img311 from "@/assets/image311.jpeg";
+import img312 from "@/assets/image312.jpeg";
+import img313 from "@/assets/image313.jpeg";
+import img314 from "@/assets/image314.jpeg";
 
 interface PropertyCardProps {
   id: number;
@@ -26,11 +31,12 @@ export function PropertyCard({
   type,
   features,
   description,
-}: PropertyCardProps) {
+  gallery
+}: PropertyCardProps & { gallery?: string[] }) {
   const navigate = useNavigate();
   
   const handleCall = () => {
-  window.open("tel:+918552815725", "_self");
+  window.open("tel:+919763672641", "_self");
   };
 
   const handleViewDetails = () => {
@@ -39,19 +45,13 @@ export function PropertyCard({
 
   const handleWhatsApp = () => {
     const message = `Hi, I am interested in this property: ${title}. Please share more details.`;
-    window.open(`https://wa.me/918552815725?text=${encodeURIComponent(message)}`, "_blank");
+  window.open(`https://wa.me/919763672641?text=${encodeURIComponent(message)}`, "_blank");
   };
 
   return (
     <Card className="group overflow-hidden border-0 shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1 bg-white">
       <div className="relative overflow-hidden">
-        <img
-          src={image}
-          alt={title}
-          className="w-full h-48 sm:h-56 md:h-64 object-cover transition-transform duration-500 group-hover:scale-105"
-        />
-  {/* Removed type badge */}
-  {/* Removed price display */}
+  <ImageSlider images={gallery && gallery.length > 0 ? gallery : [image]} heightClass="aspect-[3/2] w-full" />
       </div>
       
       <CardContent className="p-4 sm:p-5 space-y-3">
