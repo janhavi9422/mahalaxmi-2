@@ -14,7 +14,7 @@ export function Hero() {
       <div className="w-full flex flex-col items-center justify-center mt-2 mb-4">
         <div className="flex items-end gap-2">
           <span className="text-4xl md:text-5xl font-extrabold text-yellow-400 drop-shadow animate-pulse">
-            <CounterAnimation end={15} duration={1800} suffix="+" />
+            <CounterAnimation end={13} duration={1800} suffix="+" />
           </span>
           <span className="text-lg md:text-2xl font-semibold text-yellow-500 mb-1 ml-1 tracking-wide" style={{letterSpacing:'0.04em'}}>Years of Trust</span>
         </div>

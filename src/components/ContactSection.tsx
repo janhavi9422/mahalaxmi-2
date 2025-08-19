@@ -85,7 +85,7 @@ export function ContactSection() {
                   <Building className="w-4 h-4 text-black" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-white text-base md:text-lg">15+ Years of Excellence</h4>
+                  <h4 className="font-semibold text-white text-base md:text-lg">13+ Years of Excellence</h4>
                   <p className="text-gray-400 text-xs md:text-sm">Trusted name in Nagpur's real estate market</p>
                 </div>
               </div>
