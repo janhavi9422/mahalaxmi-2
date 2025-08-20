@@ -1,5 +1,5 @@
 
-import heroBanner from "@/assets/mahalaxmi-banner.jpg";
+import heroBanner from "@/assets/logo.png";
 import { CounterAnimation } from "./CounterAnimation";
 
 export function Hero() {

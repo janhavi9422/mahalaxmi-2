@@ -56,10 +56,9 @@ export function QuotationForm() {
 📧 Email: ${formData.email}
 
 🏘️ Property Details:
-- Type: ${formData.propertyType}
-- Budget: ${formData.budget}
-- Preferred Location: ${formData.location}
-- Bedrooms: ${formData.bedrooms}
+ - Type: ${formData.propertyType}
+ - Budget: ${formData.budget}
+ - Preferred Location: ${formData.location}
 
 ✨ Desired Amenities:
 ${formData.amenities.map(amenity => `- ${amenity}`).join('\n')}
@@ -68,7 +67,7 @@ ${formData.amenities.map(amenity => `- ${amenity}`).join('\n')}
 ${formData.additionalRequirements}
 
 Please provide a detailed quotation for properties matching these requirements.
-    `.trim();
+  `.trim();
 
   window.open(`https://wa.me/919763672641?text=${encodeURIComponent(message)}`, "_blank");
     
@@ -107,17 +106,17 @@ Please provide a detailed quotation for properties matching these requirements.
 
           <CardContent className="p-4 md:p-6 lg:p-8">
             <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-                  <Label htmlFor="name" className="text-white text-sm font-medium">Full Name *</Label>
-                  <Input
-                    id="name"
-                    required
-                    value={formData.name}
-                    onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
-                    className="bg-gray-700 border-gray-600 text-white text-sm"
-                    placeholder="Enter your full name"
-                  />
-                </div>
+              <div className="flex flex-col space-y-1 md:space-y-2 w-full">
+                <Label htmlFor="name" className="text-white text-sm font-medium">Full Name *</Label>
+                <Input
+                  id="name"
+                  required
+                  value={formData.name}
+                  onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
+                  className="bg-gray-700 border-gray-600 text-white text-sm w-full"
+                  placeholder="Enter your full name"
+                />
+              </div>
 
                 <div className="space-y-1 md:space-y-2">
                   <Label htmlFor="phone" className="text-white text-sm font-medium">Phone Number *</Label>
